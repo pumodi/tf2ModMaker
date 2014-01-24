@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		415089F51892FEFA00B90573 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A11D9418895F1800990DC9 /* AVFoundation.framework */; };
+		415089F7189307DE00B90573 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 415089F6189307DE00B90573 /* libz.dylib */; };
+		415089FA18930F2A00B90573 /* setArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = 415089F918930F2A00B90573 /* setArrays.m */; };
 		41A11D921889585400990DC9 /* Team_Fortress_2_Logo_by_JoeHellser.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A11D911889585400990DC9 /* Team_Fortress_2_Logo_by_JoeHellser.png */; };
 		41A11D97188967CB00990DC9 /* text edit in Resources */ = {isa = PBXBuildFile; fileRef = 41A11D96188967CB00990DC9 /* text edit */; };
 		41EBB7371888EA5300B2BD0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EBB7361888EA5300B2BD0D /* Cocoa.framework */; };
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		415089F6189307DE00B90573 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		415089F818930F2A00B90573 /* setArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setArrays.h; sourceTree = "<group>"; };
+		415089F918930F2A00B90573 /* setArrays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setArrays.m; sourceTree = "<group>"; };
 		41A11D911889585400990DC9 /* Team_Fortress_2_Logo_by_JoeHellser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Team_Fortress_2_Logo_by_JoeHellser.png; sourceTree = "<group>"; };
 		41A11D9418895F1800990DC9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		41A11D96188967CB00990DC9 /* text edit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "text edit"; sourceTree = "<group>"; };
@@ -62,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				415089F7189307DE00B90573 /* libz.dylib in Frameworks */,
+				415089F51892FEFA00B90573 /* AVFoundation.framework in Frameworks */,
 				41EBB7371888EA5300B2BD0D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +108,7 @@
 		41EBB7351888EA5300B2BD0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				415089F6189307DE00B90573 /* libz.dylib */,
 				41A11D9418895F1800990DC9 /* AVFoundation.framework */,
 				41EBB7361888EA5300B2BD0D /* Cocoa.framework */,
 				41EBB7551888EA5300B2BD0D /* XCTest.framework */,
@@ -121,6 +130,8 @@
 		41EBB73C1888EA5300B2BD0D /* TF2 ModMaker */ = {
 			isa = PBXGroup;
 			children = (
+				415089F818930F2A00B90573 /* setArrays.h */,
+				415089F918930F2A00B90573 /* setArrays.m */,
 				41EBB7481888EA5300B2BD0D /* AppDelegate.h */,
 				41EBB7491888EA5300B2BD0D /* AppDelegate.m */,
 				41EBB74B1888EA5300B2BD0D /* MainMenu.xib */,
@@ -267,6 +278,7 @@
 			files = (
 				41EBB74A1888EA5300B2BD0D /* AppDelegate.m in Sources */,
 				41EBB7431888EA5300B2BD0D /* main.m in Sources */,
+				415089FA18930F2A00B90573 /* setArrays.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

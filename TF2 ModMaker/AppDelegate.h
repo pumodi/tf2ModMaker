@@ -27,14 +27,16 @@
 @property (weak) IBOutlet NSButton *btnSgroupItems;
 @property (weak) IBOutlet NSPopUpButton *btnDropdownSoundToReplace;
 @property (weak) IBOutlet NSTextField *textFieldReplacementSound;
+@property (weak) IBOutlet NSTextField *textFieldTFDirectoryLocation;
+@property (weak) IBOutlet NSTextField *textFieldDefaultCustomFolder;
 @property (weak) IBOutlet NSButton *btnSelectReplacementSound;
 @property (weak) IBOutlet NSButton *btnPlayPreview;
 @property (weak) IBOutlet NSButton *btnStopPreview;
-@property (weak) IBOutlet NSButton *btnAddTemp;
 @property (weak) IBOutlet NSButton *btnMakeVPKandMove;
 @property (weak) IBOutlet NSButton *btnMove;
 @property (weak) IBOutlet NSButton *btnMakeZip;
 @property (weak) IBOutlet NSButton *btnMakeVPK;
+@property (weak) IBOutlet NSButton *btnShowFirstRun;
 
 @property (nonatomic) NSURL *urlTfDirectory;
 @property (nonatomic) NSURL *urlCustomDirectory;
@@ -53,15 +55,7 @@
 @property (nonatomic) NSURL *miscPath;
 @property (nonatomic) NSURL *customPath;
 @property (nonatomic) int soundGroupTag;
-@property (nonatomic) NSArray *ambientItemArray;
-@property (nonatomic) NSArray *voItemArray;
-@property (nonatomic) NSArray *weaponsItemArray;
-@property (nonatomic) NSArray *commentaryItemArray;
-@property (nonatomic) NSArray *doorsItemArray;
-@property (nonatomic) NSArray *itemsItemArray;
-@property (nonatomic) NSArray *playerItemArray;
-@property (nonatomic) NSArray *physicsItemArray;
-@property (nonatomic) NSArray *miscItemArray;
-@property (nonatomic) NSArray *uiItemArray;
+@property (nonatomic) NSString *tfString;
+@property (nonatomic) NSString *defaultFolderString;
 
 @end
