@@ -22,14 +22,14 @@
                                     <action selector="openAbout:" target="494" id="THH-7i-qAv"/>
                                 </connections>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="c9E-9z-wcx"/>
-                            <menuItem title="Preferences" id="Dih-ME-Jai">
+                            <menuItem isSeparatorItem="YES" hidden="YES" id="c9E-9z-wcx"/>
+                            <menuItem title="Preferences" hidden="YES" enabled="NO" id="Dih-ME-Jai">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="makeKeyAndOrderFront:" target="371" id="Ejg-yc-r33"/>
                                 </connections>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="236">
+                            <menuItem isSeparatorItem="YES" hidden="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
                             <menuItem title="Hide TF2 ModMaker" keyEquivalent="h" id="134">
@@ -164,6 +164,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="changeFirstRunDefault:" target="494" id="zL4-VR-tSG"/>
+                        </connections>
                     </button>
                     <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" alphaValue="0.50000000000000011" translatesAutoresizingMaskIntoConstraints="NO" id="D4n-Ou-WwN">
                         <rect key="frame" x="418" y="20" width="42" height="42"/>
@@ -212,6 +215,7 @@
                 <outlet property="btnShowFirstRun" destination="qMx-6E-mkV" id="EKL-dA-sEt"/>
                 <outlet property="btnStopPreview" destination="B2I-U9-d6c" id="jB2-mc-i4F"/>
                 <outlet property="dtnDropdownSoundToReplace" destination="V53-Cw-nxd" id="WET-kX-HKA"/>
+                <outlet property="panelFirstRun" destination="WbA-bk-RtB" id="rmu-fD-trR"/>
                 <outlet property="textFieldDefaultCustomFolder" destination="vGo-Lx-Yla" id="HHx-K2-s9Y"/>
                 <outlet property="textFieldReplacementSound" destination="dbV-TY-6RM" id="fll-ds-PLQ"/>
                 <outlet property="textFieldTFDirectoryLocation" destination="Qxn-zn-BUq" id="y79-Dj-HgU"/>
@@ -221,7 +225,8 @@
         <customObject id="420" customClass="NSFontManager"/>
         <window title="TF2 ModMaker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="lqz-y8-lEd">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES"/>
-            <rect key="contentRect" x="196" y="207" width="630" height="643"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES"/>
+            <rect key="contentRect" x="1093" y="207" width="630" height="643"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <value key="minSize" type="size" width="630" height="734"/>
             <value key="maxSize" type="size" width="630" height="734"/>
@@ -401,7 +406,7 @@
                             <action selector="moveToCustomFolder:" target="494" id="dGq-wu-obx"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wnj-m4-BY1">
+                    <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wnj-m4-BY1">
                         <rect key="frame" x="20" y="195" width="38" height="42"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSGoRightTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dr9-ih-A1P">
@@ -412,7 +417,7 @@
                             <action selector="previewAudio:" target="494" id="pzp-Ws-45d"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2I-U9-d6c">
+                    <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2I-U9-d6c">
                         <rect key="frame" x="72" y="195" width="38" height="42"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSStopProgressTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9v2-t0-sQb">
@@ -423,7 +428,7 @@
                             <action selector="previewAudio:" target="494" id="VYG-26-Y7f"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFw-1i-rnL">
+                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFw-1i-rnL">
                         <rect key="frame" x="118" y="208" width="78" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preview File" id="EK6-Le-vf8">
@@ -531,7 +536,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Qr-v4-Otu">
                         <rect key="frame" x="30" y="109" width="254" height="37"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="A - This processes the file and moves it into place on your computer" id="PaA-lD-HbN">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This processes the file and moves it into place on your computer" id="PaA-lD-HbN">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -579,34 +584,30 @@
                 </subviews>
             </view>
         </window>
-        <window title="ModMaker - First Run!" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="WbA-bk-RtB" customClass="NSPanel">
+        <window title="ModMaker - Hello!" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="WbA-bk-RtB" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="1260" y="537" width="615" height="390"/>
+            <windowPositionMask key="initialPositionMask" rightStrut="YES"/>
+            <rect key="contentRect" x="68" y="389" width="615" height="242"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <value key="minSize" type="size" width="615" height="390"/>
             <value key="maxSize" type="size" width="615" height="390"/>
             <view key="contentView" id="fyd-Ci-N4h">
-                <rect key="frame" x="0.0" y="0.0" width="615" height="390"/>
+                <rect key="frame" x="0.0" y="0.0" width="615" height="242"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a11-5r-h6o">
-                        <rect key="frame" x="18" y="20" width="579" height="350"/>
+                        <rect key="frame" x="18" y="10" width="579" height="212"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="Z0f-eT-rqR">
                             <font key="font" metaFont="system"/>
-                            <string key="title">Thanks for downloading ModMaker!
-
-Since this is your first time running the application, ModMaker has opened this window to give you a little preliminary information.
+                            <mutableString key="title">Thanks for downloading ModMaker!
 
 ModMaker is designed to make managing and creating mod files from your own assets quicker and easier. It supports VPK creation natively.
 
-A few things to note. ModMaker requires that you select the location of the “tf” folder as well as specify or create a Custom Mod folder in order for the “Move To” functions to work properly.
-ModMaker will run without these locations defined but you will have to use the Make Zip or Make VPK function and manually move the files into place.
+A few things to note. ModMaker requires that you select the location of the “tf/custom” folder as well as specify or create a Custom Mod folder in order for the “Move To” functions to work properly.
+ModMaker will not run without these locations defined. In a future update you will be able to make a Zip or VPK of your mod within ModMaker.
 
-After your first time running the program, these file locations will be stored in preferences and won’t need to be changed unless you move the TF2 install or delete the custom mod folder.
-
-Please leave any feedback at pumodiSocial@gmail.com. Enjoy ModMaker!</string>
+Please leave any feedback at pumodiSocial@gmail.com. Enjoy ModMaker!</mutableString>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

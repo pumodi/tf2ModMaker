@@ -12,6 +12,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (unsafe_unretained) IBOutlet NSPanel *panelFirstRun;
 @property (weak) IBOutlet NSButton *btnSelectTF2;
 @property (weak) IBOutlet NSButton *btnMakeCustomFolder;
 @property (weak) IBOutlet NSButton *btnSelectCustomFolder;
@@ -57,5 +58,12 @@
 @property (nonatomic) int soundGroupTag;
 @property (nonatomic) NSString *tfString;
 @property (nonatomic) NSString *defaultFolderString;
+
+@property (nonatomic) CFStringRef tfDirectory;
+@property (nonatomic) CFStringRef tfDirectoryPath;
+@property (nonatomic) CFStringRef customDirectory;
+@property (nonatomic) CFStringRef customDirectoryPath;
+@property (nonatomic) CFStringRef showFirstRun;
+@property (nonatomic) CFBooleanRef showFirstRunBool;
 
 @end
