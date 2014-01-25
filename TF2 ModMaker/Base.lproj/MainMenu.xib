@@ -604,7 +604,7 @@
 
 ModMaker is designed to make managing and creating mod files from your own assets quicker and easier. It supports VPK creation natively.
 
-A few things to note. ModMaker requires that you select the location of the “tf/custom” folder as well as specify or create a Custom Mod folder in order for the “Move To” functions to work properly.
+A few things to note. ModMaker requires that you select the location of the “tf/custom” folder as well as specify or create a Custom Mod folder in order for the “Move To” function to work properly.
 ModMaker will not run without these locations defined. In a future update you will be able to make a Zip or VPK of your mod within ModMaker.
 
 Please leave any feedback at pumodiSocial@gmail.com. Enjoy ModMaker!</mutableString>

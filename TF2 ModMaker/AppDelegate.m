@@ -11,30 +11,10 @@
 #import "setArrays.h"
 
 @implementation AppDelegate
-@synthesize urlCustomDirectory, urlFilePath, urlModSpecificPath, urlTfDirectory, soundGroupTag, uiPath, voPath, weaponsPath, ambientPath, playerPath, commentaryPath, physicsPath, doorsPath, itemsPath, miscPath, soundPath, customPath, textFieldDefaultCustomFolder, textFieldReplacementSound, textFieldTFDirectoryLocation, defaultFolderString, tfString, tfDirectoryPath, tfDirectory, customDirectoryPath, customDirectory, showFirstRun, showFirstRunBool;
+@synthesize urlCustomDirectory, urlFilePath, urlModSpecificPath, urlTfDirectory, soundGroupTag, uiPath, voPath, weaponsPath, ambientPath, playerPath, commentaryPath, physicsPath, doorsPath, itemsPath, miscPath, soundPath, customPath, textFieldDefaultCustomFolder, textFieldReplacementSound, textFieldTFDirectoryLocation, defaultFolderString, tfString;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Set up the preference.
-    CFPreferencesSetAppValue(tfDirectory, tfDirectoryPath,
-                             kCFPreferencesCurrentApplication);
-    CFPreferencesSetAppValue(customDirectory, customDirectoryPath,
-                             kCFPreferencesCurrentApplication);
-    CFPreferencesSetAppValue(showFirstRun, showFirstRunBool,
-                             kCFPreferencesCurrentApplication);
-    
-    // Write out the preference data.
-    textFieldDefaultCustomFolder.stringValue = (__bridge NSString *)(customDirectoryPath);
-    textFieldTFDirectoryLocation.stringValue = (__bridge NSString *)(tfDirectoryPath);
-    if (showFirstRunBool == kCFBooleanTrue) {
-        _btnShowFirstRun.state = NSOnState;
-    }
-    else if (showFirstRunBool == kCFBooleanFalse) {
-        _btnShowFirstRun.state = NSOffState;
-        [_panelFirstRun close];
-    }
-    
-    CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication);
 }
 
 // Saves location of tf directory to make selecting/saving custom directories faster
@@ -52,8 +32,6 @@
         tfString = [panelTfDirectory.URL absoluteString];
         
         textFieldTFDirectoryLocation.stringValue = tfString;
-        tfDirectoryPath = (__bridge CFStringRef)(tfString);
-
     }
 }
 
@@ -72,7 +50,6 @@
     if ([panelCustomDirectory runModal] == NSFileHandlingPanelOKButton) {
         defaultFolderString = [panelCustomDirectory.URL absoluteString];
         textFieldDefaultCustomFolder.stringValue = defaultFolderString;
-        customDirectoryPath = (__bridge CFStringRef)(defaultFolderString);
 
         
         // Defines URLs for directories
@@ -254,8 +231,6 @@
     if ([panelSaveCustomDirectory runModal] == NSFileHandlingPanelOKButton) {
         defaultFolderString = [panelSaveCustomDirectory.URL absoluteString];
         textFieldDefaultCustomFolder.stringValue = defaultFolderString;
-        customDirectoryPath = (__bridge CFStringRef)(defaultFolderString);
-
         
         NSFileManager *fileManager = [NSFileManager defaultManager];
         
@@ -456,14 +431,7 @@
 } */
 
 -(IBAction)changeFirstRunDefault:(NSButton *)sender {
-    if ([_btnShowFirstRun state] == NSOnState) {
-        showFirstRunBool = kCFBooleanTrue;
-        CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication);
-    }
-    else {
-        showFirstRunBool = kCFBooleanFalse;
-        CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication);
-    }
+
 }
 
 @end

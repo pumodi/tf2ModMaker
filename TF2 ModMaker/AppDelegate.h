@@ -59,11 +59,4 @@
 @property (nonatomic) NSString *tfString;
 @property (nonatomic) NSString *defaultFolderString;
 
-@property (nonatomic) CFStringRef tfDirectory;
-@property (nonatomic) CFStringRef tfDirectoryPath;
-@property (nonatomic) CFStringRef customDirectory;
-@property (nonatomic) CFStringRef customDirectoryPath;
-@property (nonatomic) CFStringRef showFirstRun;
-@property (nonatomic) CFBooleanRef showFirstRunBool;
-
 @end
